@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+#autocolor{
+	text-align: center;
+}
+#j{
+    margin-top: 300px;
+}
+</style>
+</head>
+<body id="autocolor">
+
+<button onmouseover=true id="j">Repaint</button>
+<script type="text/javascript">
+
+(function(){
+	var hexacode = [
+
+
+'#ff6200',
+'#ff6600',
+'#00ff00',
+'#ff6e00',
+'#ff7300',
+'#ffff00'
+]
+
+	el = document.getElementById('autocolor').style,
+	counter = -1
+	hexalen = hexacode.length;
+	function auto(){
+		el.backgroundColor = hexacode[counter = ++counter % hexalen];
+    }
+        	setInterval(auto, 200);
+
+})();
+
+</script>
+</body>
+</html>
